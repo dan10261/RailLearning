@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+Reference links:
+https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm
+https://www.udemy.com
