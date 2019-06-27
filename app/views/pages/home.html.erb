@@ -2,7 +2,13 @@
 <head>
 </head>
 <body>
-	<h1>You are at home page</h1>
-	<%= link_to 'About',about_path%>
+	
+  <div class="jumbotron">
+  <h1>User blog</h1>
+  <p>...</p>
+  <p>
+  	<%= link_to "Register", new_glsuser_path, class: "btn btn-primary btn-lg ", id: "registerBtn"%>
+  </p>
+</div>
 </body>
 </html>

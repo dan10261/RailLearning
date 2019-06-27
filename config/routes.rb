@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   #route URL localhost:port/pages/about to controller 'pages' method 'about'
   #get 'pages/about', to: 'pages#about'
   get 'about', to: 'pages#about'
-  
+
+  #used to create,new,update users urls
+  #rake routes  
+  resources :glsusers
+
   
 end

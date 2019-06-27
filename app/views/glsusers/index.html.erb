@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<p>
+	
+	<%= link_to 'Create a new user' , new_glsuser_path%>
+</p>
+<h1>List all users</h1>
+<table align="center" class="table list_users_table">
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>UserName</th>
+		<th>Actions</th>
+	</thead>
+	<% @glsusers.each do |user|%>
+	<tr>
+		<td><%= user.firstname %></td>
+		<td><%= user.lastname %></td>
+		<td><%= user.username %></td>
+		<td><%= link_to 'Show' , glsuser_path(user)%>&nbsp;|&nbsp;<%= link_to 'Edit' , edit_glsuser_path(user)%>&nbsp;|&nbsp;<%= link_to 'Delete', glsuser_path(user), method: :delete,data: {confirm:"Are you sure to delete this user?"}%></td>
+	</tr>
+	<% end %>
+</table>
+</body>
+</html>
