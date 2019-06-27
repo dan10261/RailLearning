@@ -25,6 +25,11 @@ $navbar-default-bg: #c3a5e8;
 .msg-info{
 	color:green;
 }
+.jumbotron {
+	background-image: asset-url('3d-animated-frog-image.jpg');
+	background-size:cover;
+}
+
 //bootstrap default style
 @import "bootstrap-sprockets";
 @import "bootstrap";
