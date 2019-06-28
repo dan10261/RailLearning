@@ -1,4 +1,82 @@
 //custom style
+//Home Page
+$navbar-default-bg: black;
+#logo {
+	float:left;
+	font-size:1.7em;
+	text-transform:uppercase;
+	letter-spacing:-1px;
+	font-weight:bold;
+	height: 50px;
+}
+#logo:hover{	
+	color:#fff;
+	text-decoration: none;
+}
+.center{
+	text-align:center;
+}
+#registerBtn{
+	color:#fff;
+}
+.list_users_table{
+	text-align:left;
+	border-collapse: collapse;
+	border:1px solid black;
+}
+.jumbotron{
+	background-image: asset-url('global_users');
+	background-size:cover;
+	height: -o-calc(100%); /* opera */
+	height: -webkit-calc(100%); /* google, safari */
+	height: -moz-calc(100%); /* firefox */
+}
+.jumbotron h1{
+	color: #fff !important;
+}
+.main-content{
+	height: -o-calc(100% - 100px); /* opera */
+	height: -webkit-calc(100% - 100px); /* google, safari */
+	height: -moz-calc(100% - 100px); /* firefox */
+}
+
+
+//global
+.msg-info{
+	color:green;
+}
+.msg-info ul{
+	list-style:none;
+}
+
+footer{
+	margin-top: 10px;
+	padding-top: 10px;
+	height:50px;
+}
+footer small{
+	float: left;
+}
+footer li a:hover{
+	color:blue;
+	background-color:#fff;
+}
+footer li{
+	list-style: none;
+}
+ footer ul{
+ 	float: right;
+ 	display: block;
+ }
+
+html, body{
+	margin:0;
+	height: 100%;
+}
+//bootstrap default style
+@import "bootstrap-sprockets";
+=======
+//custom style
 $navbar-default-bg: #c3a5e8;
 #logo {
 	float:left;

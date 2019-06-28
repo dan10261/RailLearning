@@ -5,23 +5,53 @@
 	<% end %>
 </ul>
 <% end %>
-<h1>Edit existing user</h1>
-<%= form_for @glsuser do |f| %>
 
-<%= f.label :firstname%>
-<%= f.text_field :firstname%> 
-
-<%= f.label :lastname%>
-<%= f.text_field :lastname%> 
-
-<%= f.label :username%>
-<%= f.text_field :username%> 
-
-<%= f.label :password%>
-<%= f.password_field :password%>
-<br/>
- <%= f.submit%>
-<% end %>
-<p>
-	<%= link_to 'Back' , glsusers_path%>
-</p>
+<!-- start form styling -->
+<div class="row">
+	<div class="col-sm-12">
+		<%= form_for(@glsuser, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+			<div class="form-group">
+				<div class="col-sm-2 control-label">
+					<%= f.label :firstname%>
+				</div>
+				<div class="col-sm-8">
+					<%= f.text_field :firstname, class: "form-control"%>
+				</div> 
+			</div>
+			<div class="form-group">
+				<div class="col-sm-2 control-label">
+					<%= f.label :lastname %>
+				</div>
+				<div class="col-sm-8">
+					<%= f.text_field :lastname, class: "form-control"%> 
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-2 control-label">
+					<%= f.label :username%>
+				</div>
+				<div class="col-sm-8">
+					<%= f.text_field :username, class: "form-control"%> 
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-2 control-label">
+					<%= f.label :password %>
+				</div>
+				<div class="col-sm-8">
+					<%= f.password_field :password, class: "form-control" %>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-4">
+					 <%= f.submit class: "btn btn-primary btn-lg" %>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-8">	
+					<%= link_to '[Back]' , glsusers_path%>
+				</div>
+			</div>			
+		<% end %>
+	</div>
+</div>
