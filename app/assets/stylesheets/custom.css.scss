@@ -73,40 +73,6 @@ html, body{
 	margin:0;
 	height: 100%;
 }
-//bootstrap default style
-@import "bootstrap-sprockets";
-=======
-//custom style
-$navbar-default-bg: #c3a5e8;
-#logo {
-	float:left;
-	font-size:1.7em;
-	text-transform:uppercase;
-	letter-spacing:-1px;
-	font-weight:bold;
-}
-#logo:hover{	
-	color:#fff;
-	text-decoration: none;
-}
-.center{
-	text-align:center;
-}
-#registerBtn{
-	color:#fff;
-}
-.list_users_table{
-	text-align:left;
-	border-collapse: collapse;
-	border:1px solid black;
-}
-.msg-info{
-	color:green;
-}
-.jumbotron {
-	background-image: asset-url('3d-animated-frog-image.jpg');
-	background-size:cover;
-}
 
 //bootstrap default style
 @import "bootstrap-sprockets";
