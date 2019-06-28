@@ -1,20 +1,17 @@
-<h1>User Detail ifnormation</h1>
-<p>
-firstname:
-<%= @glsuser.firstname%> 
-</p>
-<p> 
-lastname:
-<%=  @glsuser.lastname%> 
-</p>
-<p>
-Username: 
-<%=  @glsuser.username%> 
-</p>
-Password:
-<%=  @glsuser.password%>
-<p>
-	
-	<%= link_to 'Back' , glsusers_path%>&nbsp;|&nbsp;
-	<%= link_to 'Edit' , edit_glsuser_path(@glsuser)%>
-</p>
+<div class="row">
+	<div class="well col-xs-8 col-xs-offset-2">
+	<h1 class="center detail-title">User Detail ifnormation</h1>
+
+	firstname:
+	<%= simple_format(@glsuser.firstname) %> 
+	lastname:
+	<%=  simple_format(@glsuser.lastname) %> 
+	Username: 
+	<%=  simple_format(@glsuser.username) %> 
+	<div class="detail-actions">		
+		<%= link_to 'View all users' , glsusers_path, class: "btn btn-xs btn-primary" %>		
+		<%= link_to 'Delete' , glsuser_path(@glsuser), method: :delete, data: {confirm: "Are you sure to delete this user? "}, class: "btn btn-xs btn-success"%>
+		<%= link_to 'Edit' , edit_glsuser_path(@glsuser), class: "btn btn-xs btn-success"%>
+	</div>
+	</div>
+</div>
