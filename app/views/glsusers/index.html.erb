@@ -15,7 +15,10 @@
 		<td><%= user.firstname %></td>
 		<td><%= user.lastname %></td>
 		<td><%= user.username %></td>
-		<td><%= link_to 'Show' , glsuser_path(user)%>&nbsp;|&nbsp;<%= link_to 'Edit' , edit_glsuser_path(user)%>&nbsp;|&nbsp;<%= link_to 'Delete', glsuser_path(user), method: :delete,data: {confirm:"Are you sure to delete this user?"}%></td>
+		<td>
+			<%= link_to 'Show' , glsuser_path(user)%>&nbsp;|&nbsp;
+			<%= link_to 'Edit' , edit_glsuser_path(user)%>&nbsp;|&nbsp;
+			<%= link_to 'Delete', glsuser_path(user), method: :delete, data: {confirm:"Are you sure to delete this user?"}%></td>
 	</tr>
 	<% end %>
 </table>

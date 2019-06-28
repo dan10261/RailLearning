@@ -13,7 +13,7 @@ class GlsusersController < ApplicationController
   def create
     @glsuser = Glsuser.new(glsuser_params)
     if @glsuser.save
-      flash[:notice] = "A user is successfully created."
+      flash[:success] = "A user is successfully created."
       redirect_to glsuser_path(@glsuser)
     else
       render "new"
@@ -32,7 +32,7 @@ class GlsusersController < ApplicationController
     #@glsuser = Glsuser.find(params[:id])
     if @glsuser.update(glsuser_params)
       redirect_to glsuser_path(@glsuser)
-      flash[:notice]="The user is successfully updated."
+      flash[:success]="The user is successfully updated."
     else
       render "edit"
     end
@@ -41,7 +41,7 @@ class GlsusersController < ApplicationController
   def destroy
     #@glsuser = Glsuser.find(params[:id])
     @glsuser.destroy
-    flash[:notice] = "The user was successfully deleted."
+    flash[:danger] = "The user was successfully deleted."
     redirect_to glsusers_path
   end
   #end public methods
