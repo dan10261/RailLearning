@@ -10,7 +10,7 @@
 	<%=  simple_format(@glsuser.username) %> 
 	<div class="detail-actions">		
 		<%= link_to 'View all users' , glsusers_path, class: "btn btn-xs btn-primary" %>		
-		<%= link_to 'Delete' , glsuser_path(@glsuser), method: :delete, data: {confirm: "Are you sure to delete this user? "}, class: "btn btn-xs btn-success"%>
+		<%= link_to 'Delete' , glsuser_path(@glsuser), method: :delete, data: {confirm: "Are you sure to delete this user? "}, class: "btn btn-xs btn-danger"%>
 		<%= link_to 'Edit' , edit_glsuser_path(@glsuser), class: "btn btn-xs btn-success"%>
 	</div>
 	</div>
