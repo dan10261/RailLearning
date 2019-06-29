@@ -11,6 +11,7 @@ class GlsusersController < ApplicationController
   end
 
   def create
+    debugger
     @glsuser = Glsuser.new(glsuser_params)
     if @glsuser.save
       flash[:success] = "A user is successfully created."
