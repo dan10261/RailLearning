@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_29_003038) do
+ActiveRecord::Schema.define(version: 2019_06_29_030422) do
+
+# Could not dump table "addresses" because of following StandardError
+#   Unknown type '' for column 'glsuser_id'
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
