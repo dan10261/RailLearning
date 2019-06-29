@@ -6,15 +6,46 @@
 	<% @glsusers.each do |user|%>
 		<div class="col-sm-offset-2 col-sm-8">
 			<div class="well well-lg">
-				<div class="list-body row">
-					<div class="col-sm-4">
-						<%= user.firstname %>
+				<div class="list-body row form-horizontal">
+					<div class="col-sm-6">	
+						<div class="col-sm-8 col-sm-offset-4">
+							<strong >User Info</strong>
+						</div>					
+						<label class="col-sm-4 control-label">First Name</label> 
+						<div class="col-sm-8">
+							<p class="form-control-static"><%= user.firstname %></p>
+						</div>
+						<label class="col-sm-4 control-label">Last Name</label> 
+						<div class="col-sm-8">
+							<p class="form-control-static"><%= user.lastname %></p>
+						</div>
+						<label class="col-sm-4 control-label">User Name</label> 
+						<div class="col-sm-8">
+							<p class="form-control-static"><%= user.username %></p>
+						</div>
 					</div>
-					<div class="col-sm-4">
-						<%= user.lastname %>
-					</div>
-					<div class="col-sm-4">
-						<%= user.username %>
+					<div class="col-sm-6">
+						<address>							
+							<div class="col-sm-8 col-sm-offset-4">
+								<strong>Address Info</strong>
+							</div>
+							<%  if user.addresses %>
+								<% user.addresses.each do |address| %>								
+									<label class="col-sm-4 control-label">Street 1</label> 
+									<div class="col-sm-8">
+										<p class="form-control-static"><%= address.street1 %></p>
+									</div>
+									<label class="col-sm-4 control-label">City</label> 
+									<div class="col-sm-8">
+										<p class="form-control-static"><%= address.city %></p>
+									</div>	
+									<label class="col-sm-4 control-label">State</label> 
+									<div class="col-sm-8">
+										<p class="form-control-static"><%= address.state %></p>
+									</div>								
+								<% end %>
+							<% end %>
+						</address>
 					</div>
 				</div>
 				<div class="detail-actions">		

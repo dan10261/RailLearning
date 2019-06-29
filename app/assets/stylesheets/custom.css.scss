@@ -7,7 +7,7 @@ $navbar-default-bg: black;
 	text-transform:uppercase;
 	letter-spacing:-1px;
 	font-weight:bold;
-	height: 50px;
+	height: 5vh;
 }
 #logo:hover{	
 	color:#fff;
@@ -35,9 +35,9 @@ $navbar-default-bg: black;
 	color: #fff !important;
 }
 .main-content{
-	height: -o-calc(100% - 100px); /* opera */
-	height: -webkit-calc(100% - 100px); /* google, safari */
-	height: -moz-calc(100% - 100px); /* firefox */
+	min-height: -o-calc(100% - 10vh); /* opera */
+	min-height: -webkit-calc(100vh - 10vh); /* google, safari */
+	min-height: -moz-calc(100% - 100vh); /* firefox */
 }
 .detail-actions{
 	border-top: 1px solid #eaeaea;
@@ -54,9 +54,11 @@ $navbar-default-bg: black;
 	text-align: left;
 }
 footer{
+	float: none;
+	clear: both;
 	margin-top: 10px;
 	padding-top: 10px;
-	height:50px;
+	height:5vh;
 }
 footer small{
 	float: left;
@@ -75,7 +77,7 @@ footer li{
 
 html, body{
 	margin:0;
-	height: 100%;
+	min-height: 100vh;
 }
 
 
