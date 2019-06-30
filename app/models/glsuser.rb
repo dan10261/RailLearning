@@ -1,7 +1,8 @@
 #connection between controller and database
 class Glsuser < ApplicationRecord
  	has_many :notes
- 	has_many :addresses
+ 	has_many :addresses, dependent: :delete_all
+ 	accepts_nested_attributes_for :addresses
  	before_save { self.email = email.downcase }
  	VALID_EMAIL_REGEX= /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
  	validates :username, presence: true, length: {minumum: 3,maximum: 50}, uniqueness: {case_sensitive: false}

@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_29_030422) do
+ActiveRecord::Schema.define(version: 2019_06_30_065357) do
 
-# Could not dump table "addresses" because of following StandardError
-#   Unknown type '' for column 'glsuser_id'
+  create_table "addresses", force: :cascade do |t|
+    t.text "street1"
+    t.text "street2"
+    t.string "zip5"
+    t.string "zip4"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "province"
+    t.string "is_foreign_country"
+    t.integer "glsuser_id"
+    t.index ["glsuser_id"], name: "index_addresses_on_glsuser_id"
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string "title"

@@ -8,10 +8,11 @@ class GlsusersController < ApplicationController
 
   def new
     @glsuser = Glsuser.new
+    @glsuser.addresses.new
   end
 
   def create
-    debugger
+   # debugger
     @glsuser = Glsuser.new(glsuser_params)
     if @glsuser.save
       flash[:success] = "A user is successfully created."
@@ -31,6 +32,7 @@ class GlsusersController < ApplicationController
 
   def update
     #@glsuser = Glsuser.find(params[:id])
+    #debugger
     if @glsuser.update(glsuser_params)
       redirect_to glsuser_path(@glsuser)
       flash[:success]="The user is successfully updated."
@@ -56,7 +58,7 @@ class GlsusersController < ApplicationController
   end
 
   def glsuser_params
-    params.require(:glsuser).permit(:username, :password, :firstname, :lastname)
+    params.require(:glsuser).permit(:username, :password, :firstname,:email, :lastname, :addresses_attributes=>[:id, :street1, :city , :zip4 , :state, :glsuser_id])
   end
 
   #end private methods
