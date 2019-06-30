@@ -1,0 +1,31 @@
+<% if obj %>
+	<% count = 0%>
+	<% obj.each do |address| %>
+			<% count = count + 1 %>
+			<label class="col-sm-2 control-label"> </label>
+			<div class="col-sm-10">
+				<h3>Address <%= count %><h3>
+			</div><!---address street1---->
+
+			<label class="col-sm-2 control-label">Street </label>
+			<div class="col-sm-10">
+				<%= simple_format(address.street1, class: "form-control-static detail-user-content" )%> 
+			</div><!---address street1---->
+
+			<label class="col-sm-2 control-label">City</label>
+			<div class="col-sm-10">
+				<%=  simple_format(address.city, class: "form-control-static detail-user-content") %> 
+			</div><!---address City---->
+
+			<label class="col-sm-2 control-label">State</label>
+			<div class="col-sm-10 ">
+				<%=  simple_format(address.state,  class: "form-control-static detail-user-content") %> 
+			</div><!---address state---->		
+
+
+			<label class="col-sm-2 control-label">Zip Code</label>
+			<div class="col-sm-10">
+				<%=  simple_format("#{address.zip4} #{address.zip5}",  class: "form-control-static detail-user-content") %> 
+			</div><!---address Zip 4 + 5---->
+	<% end %>
+<% end %>

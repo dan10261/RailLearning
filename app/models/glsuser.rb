@@ -8,4 +8,5 @@ class Glsuser < ApplicationRecord
  	validates :username, presence: true, length: {minumum: 3,maximum: 50}, uniqueness: {case_sensitive: false}
   	validates :password, presence: true, length: {minimum: 8, maximum: 20}
   	validates :email, uniqueness: true, length: {maximum: 100}, format: { with: VALID_EMAIL_REGEX }
+  	has_secure_password
 end

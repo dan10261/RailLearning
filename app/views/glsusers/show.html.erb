@@ -2,58 +2,36 @@
 	<div class="well col-xs-8 col-xs-offset-2 ">
 		<h1 class="center detail-title">User Detail ifnormation</h1>
 		<div class="form-hrizontal">
-			<div class=" col-sm-6">
-				<label class="col-xs-5 control-label">First Name</label>
-				<div class="col-xs-7">
+			<div class=" col-sm-12">
+				<label class="col-sm-2 control-label">First Name</label>
+				<div class="col-sm-10">
 					<%= simple_format(@glsuser.firstname, class: "form-control-static detail-user-content" )%> 
 				</div>
 
-				<label class="col-xs-5 control-label">Last Name</label>
-				<div class="col-xs-7">
+				<label class="col-sm-2 control-label">Last Name</label>
+				<div class="col-sm-10">
 					<%=  simple_format(@glsuser.lastname, class: "form-control-static detail-user-content") %> 
 				</div><!---Last Name---->
 
-				<label class="col-xs-5 control-label">User Name</label>
-				<div class="col-xs-7 ">
+				<label class="col-sm-2 control-label">User Name</label>
+				<div class="col-sm-10 ">
 					<%=  simple_format(@glsuser.username,  class: "form-control-static detail-user-content") %> 
 				</div><!---User Name---->		
 
-
-				<label class="col-xs-5 control-label">User Email</label>
-				<div class="col-xs-7 ">
+				<label class="col-sm-2 control-label">User Email</label>
+				<div class="col-sm-10 ">
 					<%=  simple_format(@glsuser.email,  class: "form-control-static detail-user-content") %> 
 				</div><!---User Email---->	
 			</div>
-			<% if @glsuser.addresses %>
-				<% @glsuser.addresses.each do |address| %>
-					<div class="col-sm-6">
-						<label class="col-xs-5 control-label">Street </label>
-						<div class="col-xs-7">
-							<%= simple_format(address.street1, class: "form-control-static detail-user-content" )%> 
-						</div><!---address street1---->
-
-						<label class="col-xs-5 control-label">City</label>
-						<div class="col-xs-7">
-							<%=  simple_format(address.city, class: "form-control-static detail-user-content") %> 
-						</div><!---address City---->
-
-						<label class="col-xs-5 control-label">State</label>
-						<div class="col-xs-7 ">
-							<%=  simple_format(address.state,  class: "form-control-static detail-user-content") %> 
-						</div><!---address state---->		
-
-
-						<label class="col-xs-5 control-label">Zip Code</label>
-						<div class="col-xs-7">
-							<%=  simple_format("#{address.zip4} #{address.zip5}",  class: "form-control-static detail-user-content") %> 
-						</div><!---address Zip 4 + 5---->
-					</div>
-				<% end %>
-			<% end %>
-		<div class="detail-actions">		
-			<%= link_to 'View all users' , glsusers_path, class: "btn btn-xs btn-primary" %>		
-			<%= link_to 'Delete' , glsuser_path(@glsuser), method: :delete, data: {confirm: "Are you sure to delete this user? "}, class: "btn btn-xs btn-danger"%>
-			<%= link_to 'Edit' , edit_glsuser_path(@glsuser), class: "btn btn-xs btn-success"%>
-		</div><!---user actions---->
+			<div class="col-sm-12">
+				<!-- display a list of addresses that belong to this user--->
+				<%= render 'addresses/show_addresses', obj: @glsuser.addresses%>
+			</div>
+			<div class="detail-actions">		
+				<%= link_to 'View all users' , glsusers_path, class: "btn btn-xs btn-primary" %>		
+				<%= link_to 'Delete' , glsuser_path(@glsuser), method: :delete, data: {confirm: "Are you sure to delete this user? "}, class: "btn btn-xs btn-danger"%>
+				<%= link_to 'Edit' , edit_glsuser_path(@glsuser), class: "btn btn-xs btn-success"%>
+			</div><!---user actions---->
 	</div>
+</div>
 </div>
