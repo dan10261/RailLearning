@@ -24,13 +24,25 @@
 				</div><!---User Email---->	
 			</div>
 			<div class="col-sm-12">
+				<div class="col-sm-12">
+					<center><h1>List of user addresses</h1></center>
+				</div>
+				<!--Add pagination-->
+				<div class="col-sm-12">
+					<center><%= will_paginate @glsuser_addresses %></center>
+				<div>
 				<!-- display a list of addresses that belong to this user--->
-				<%= render 'addresses/show_addresses', obj: @glsuser.addresses%>
+				<%= render 'addresses/show_addresses', obj:  @glsuser_addresses%>
+				
+				<div class=" col-sm-12">
+					<center><%= will_paginate @glsuser_addresses %></center>
+				</div>
 			</div>
 			<div class="detail-actions">		
 				<%= link_to 'View all users' , glsusers_path, class: "btn btn-xs btn-primary" %>		
-				<%= link_to 'Delete' , glsuser_path(@glsuser), method: :delete, data: {confirm: "Are you sure to delete this user? "}, class: "btn btn-xs btn-danger"%>
-				<%= link_to 'Edit' , edit_glsuser_path(@glsuser), class: "btn btn-xs btn-success"%>
+				<%= link_to 'Delete user' , glsuser_path(@glsuser), method: :delete, data: {confirm: "Are you sure to delete this user? "}, class: "btn btn-xs btn-danger"%>
+				<%= link_to 'Edit user' , edit_glsuser_path(@glsuser), class: "btn btn-xs btn-success"%>			
+				<%= link_to 'Add a new address' , new_address_path(:glsuser_id=>@glsuser.id	), class: "btn btn-xs btn-info"%>
 			</div><!---user actions---->
 	</div>
 </div>

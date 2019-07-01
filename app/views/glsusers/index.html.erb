@@ -3,6 +3,9 @@
 	<%= link_to 'Create a new user' , new_glsuser_path%>
 </p>
 <h1 class="center">List all users</h1>
+	<div class="col-sm-12">
+		<center><%= will_paginate @glsusers %></center>
+	<div>
 	<% @glsusers.each do |user|%>
 		<div class="col-sm-offset-2 col-sm-8">
 			<div class="well well-lg">
@@ -30,30 +33,35 @@
 							<div class="col-sm-8 col-sm-offset-4">
 								<strong>Address Info</strong>
 							</div>
+							<% user.addresses.each do |address| %>
 								<!-- Only display this first address for this user -->					
 									<label class="col-sm-4 control-label">Street 1</label> 
 									<div class="col-sm-8">
-										<p class="form-control-static"><%= user.addresses.first.street1 %></p>
+										<p class="form-control-static"><%= address.street1 %></p>
 									</div>
 									<label class="col-sm-4 control-label">City</label> 
 									<div class="col-sm-8">
-										<p class="form-control-static"><%= user.addresses.first.city %></p>
+										<p class="form-control-static"><%= address.city %></p>
 									</div>	
 									<label class="col-sm-4 control-label">State</label> 
 									<div class="col-sm-8">
-										<p class="form-control-static"><%= user.addresses.first.state %></p>
+										<p class="form-control-static"><%= address.state %></p>
 									</div>							
+							<% end %>
 							<% end %>
 						</address>
 					</div>
 				</div>
-				<div class="detail-actions">		
-					<%= link_to 'View detail' , glsuser_path(user), class: "btn btn-xs btn-primary" %>		
-					<%= link_to 'Delete' , glsuser_path(user), method: :delete, 
+				<div class="detail-actions" >		
+					<%= link_to 'View user detail' , glsuser_path(user), class: "btn btn-xs btn-primary" %>		
+					<%= link_to 'Delete user' , glsuser_path(user), method: :delete, 
 																	data: {confirm: "Are you sure to delete this user? "}, 
 																	class: "btn btn-xs btn-danger"%>
-					<%= link_to 'Edit' , edit_glsuser_path(user), class: "btn btn-xs btn-success"%>
+					<%= link_to 'Edit user' , edit_glsuser_path(user), class: "btn btn-xs btn-success"%>
 				</div>
 			</div>
 		</div>
 	<% end %>
+	<div class="col-sm-12">
+		<center><%= will_paginate %></center>
+	</div>

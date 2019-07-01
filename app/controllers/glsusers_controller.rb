@@ -3,7 +3,9 @@ class GlsusersController < ApplicationController
 
   #public methods
   def index
-    @glsusers = Glsuser.all
+    #@glsusers = Glsuser.all
+    @glsusers = Glsuser.paginate(page: params[:page], per_page: 3) 
+  #  debugger
   end
 
   def new
@@ -24,6 +26,7 @@ class GlsusersController < ApplicationController
 
   def show
     #@glsuser = Glsuser.find(params[:id])
+    @glsuser_addresses = @glsuser.addresses.paginate(page: params[:page], per_page: 3)
   end
 
   def edit
