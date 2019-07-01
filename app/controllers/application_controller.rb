@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 		current_glsuser != nil
 	end
 
-	def require_user
+	def require_glsuser
 		if !logged_in?
 			flash[:danger] = "you must login to perform that task"
 			redirect_to root_path

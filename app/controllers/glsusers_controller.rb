@@ -1,5 +1,7 @@
 class GlsusersController < ApplicationController
   before_action :set_glsuser, only: [:edit, :show, :update, :destroy]
+  before_action :require_glsuser, except: [:index, :show] #prevent anonymous use see the actions pages
+  before_action :require_same_glsuser, only: [:edit, :update, :destroy]
 
   #public methods
   def index
@@ -64,5 +66,11 @@ class GlsusersController < ApplicationController
     params.require(:glsuser).permit(:username, :password, :firstname,:email, :lastname, :addresses_attributes=>[:id, :street1, :city , :zip4 , :state, :glsuser_id])
   end
 
+  def require_same_glsuser
+    if current_glsuser != @glsuser
+      flash[:danger] = "You can only edit your own information"
+      redirect_to root_path
+    end
+  end
   #end private methods
 end

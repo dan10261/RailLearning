@@ -2,7 +2,7 @@
 <div class="row">
 	<div class="col-sm-12">		
 		<div class="col-sm-9 col-sm-offset-3">
-			<h1>Add a new address for <%= @address.glsuser.firstname %> &nbsp;<%= @address.glsuser.lastname %></h1>
+			<h1>Add a new address for <%= current_glsuser.firstname %> &nbsp;<%= current_glsuser.lastname %></h1>
 		</div>
 		<%= render 'form'%>
 	</div>
