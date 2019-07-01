@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 		glsuser = Glsuser.find_by(email: params[:session][:email].downcase)
 		if glsuser && glsuser.authenticate(params[:session][:password])
 			flash[:success] = "You are successfully login"
-			session[:glsuserr_id] = glsuser.id
+			session[:glsuser_id] = glsuser.id
 			redirect_to glsuser_path(glsuser)
 		else
 			flash[:danger] = "Login fail"

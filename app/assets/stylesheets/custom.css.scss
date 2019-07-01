@@ -27,9 +27,10 @@ $navbar-default-bg: black;
 .jumbotron{
 	background-image: asset-url('global_users');
 	background-size:cover;
-	height: -o-calc(100%); /* opera */
-	height: -webkit-calc(100%); /* google, safari */
-	height: -moz-calc(100%); /* firefox */
+	opacity: 0.8;
+	height: -o-calc(100vh); /* opera */
+	height: -webkit-calc(100vh); /* google, safari */
+	height: -moz-calc(100vh); /* firefox */
 }
 .jumbotron h1{
 	color: #fff !important;
@@ -50,6 +51,10 @@ $navbar-default-bg: black;
 }
 .description{
 	margin-top: 0;
+}
+
+.login-text{
+	color:#fff;
 }
 
 //global
