@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   #route URL localhost:port/pages/about to controller 'pages' method 'about'
   #get 'pages/about', to: 'pages#about'
   get 'about', to: 'pages#about'
-
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
 
 
   
