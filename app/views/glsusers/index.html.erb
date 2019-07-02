@@ -1,7 +1,8 @@
-<p class="center">
+
+	<p class="center">
 	
-	<%= link_to 'Create a new user' , new_glsuser_path%>
-</p>
+		<%= link_to 'Create a new user' , new_glsuser_path if current_glsuser && current_glsuser.admin?%>
+	</p>
 <h1 class="center">List all users</h1>
 	<div class="col-sm-12">
 		<center><%= will_paginate @glsusers %></center>

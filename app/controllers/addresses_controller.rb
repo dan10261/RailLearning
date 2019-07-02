@@ -35,7 +35,7 @@ class AddressesController < ApplicationController
 		end
 	end
 
-	 def destroy
+	 def destroy 
 	    @address.destroy
 	    flash[:danger] = "The address was successfully deleted."
 	    redirect_to glsuser_path(@address.glsuser)
@@ -56,7 +56,8 @@ class AddressesController < ApplicationController
 	end
 
 	def require_same_user
-		if current_glsuser != @address.glsuser
+	  #debugger
+		if current_glsuser != @address.glsuser and !current_glsuser.admin?
 		  flash[:danger] = "You can only edit your own address"
 	      redirect_to root_path
 	    end 
