@@ -16,10 +16,8 @@ class NotesTest < ApplicationSystemTestCase
 
     fill_in "Category", with: @note.category_id
     fill_in "Content", with: @note.content
-    fill_in "Create date", with: @note.create_date
     fill_in "Glsuser", with: @note.glsuser_id
     fill_in "Subject", with: @note.subject
-    fill_in "Update date", with: @note.update_date
     click_on "Create Note"
 
     assert_text "Note was successfully created"
@@ -32,10 +30,8 @@ class NotesTest < ApplicationSystemTestCase
 
     fill_in "Category", with: @note.category_id
     fill_in "Content", with: @note.content
-    fill_in "Create date", with: @note.create_date
     fill_in "Glsuser", with: @note.glsuser_id
     fill_in "Subject", with: @note.subject
-    fill_in "Update date", with: @note.update_date
     click_on "Update Note"
 
     assert_text "Note was successfully updated"

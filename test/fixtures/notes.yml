@@ -3,15 +3,11 @@
 one:
   subject: MyText
   content: MyText
-  create_date: 
-  update_date: 
   glsuser: one
   category: one
 
 two:
   subject: MyText
   content: MyText
-  create_date: 
-  update_date: 
   glsuser: two
   category: two
