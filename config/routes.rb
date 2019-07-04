@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #rake routes  
   resources :glsusers
   resources :notes
-  resources :categories, except: [:destroy]
+  resources :categories #, except: [:destroy]
   resources :articles
   resources :addresses
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
