@@ -48,27 +48,48 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest #ActionControll
 #    assert_redirected_to categories_url
 #  end
   ##the above is auto generated testing cases
-  setup do
-    @category = Category.create(name: "sports")
+  def setup 
+   # @category = Category.create(name: "sports")
+    @glsuser = Glsuser.create(username: "john", email: "john@example.com", password: "password", admin: true)
   end
   
   test "should get categories  index" do
-    get categories_path
+   # get categories_path
     #get :index
-    assert_response :success
+   # assert_response :success
   end
   
   test "should get new" do
-    get new_category_path
+    #get new_category_path
+    #sign_in_as(@user, "password")
     #get :new
-    assert_response :success
+    #assert_response :success
   end
   
   test "should get show" do
-    get category_path(@category)
+   # get category_path(@category)
     #get(:show, {'id' => @category.id})
-    assert_response :success
+    #assert_response :success
   end
-  
-  
+  test "get new Category form and create category" do
+   #   sign_in_as(@glsuser, "password")
+   # get new_category_path
+   #  assert_template "categories/new"
+   #  assert_difference 'Category.count', 1 do
+   #    post categories_path, params: { category: { name: "sportsD"}}
+   #    follow_redirect!
+   #  end
+   #  assert_template 'categories/index'
+    #assert_match "sportsD",response_body_if_short
+  end
+   test "should redirect create when admin not logged in" do
+   # sign_in_as(@glsuser, "password")
+    assert_no_difference 'Category.count' do
+      post categories_path, params: { category: { name: "sportshwlo" } }
+    end
+    #assert_template 'categories/new'
+     assert_redirected_to categories_path
+  end
+
+ 
 end
