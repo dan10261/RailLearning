@@ -1,5 +1,4 @@
-<h1>New Article</h1>
-
+<center><h1>New Article</h1></center>
+<%= render 'shared/errors' , obj: @article %>
 <%= render 'form', article: @article %>
-
-<%= link_to 'Back', articles_path %>
+<center><%= link_to 'Back', articles_path %></center>

@@ -83,7 +83,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest #ActionControll
     #assert_match "sportsD",response_body_if_short
   end
    test "should redirect create when admin not logged in" do
-   # sign_in_as(@glsuser, "password")
+    #sign_in_as(@glsuser, "password")
     assert_no_difference 'Category.count' do
       post categories_path, params: { category: { name: "sportshwlo" } }
     end

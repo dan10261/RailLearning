@@ -36,9 +36,9 @@ $navbar-default-bg: black;
 	color: #fff !important;
 }
 .main-content{
-	min-height: -o-calc(100% - 10vh); /* opera */
+	min-height: -o-calc(100vh - 10vh); /* opera */
 	min-height: -webkit-calc(100vh - 10vh); /* google, safari */
-	min-height: -moz-calc(100% - 100vh); /* firefox */
+	min-height: -moz-calc(100vh - 100vh); /* firefox */
 }
 .detail-actions{
 	border-top: 1px solid #eaeaea;

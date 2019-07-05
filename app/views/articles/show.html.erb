@@ -1,5 +1,8 @@
-<p id="notice"><%= notice %></p>
-
+<center>
+<h1>Article Detail</h1>
+</center>
+<div class="row">
+<div class="col-sm-offset-2 col-sm-8 well">
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -9,6 +12,9 @@
   <strong>Description:</strong>
   <%= @article.description %>
 </p>
-
+</div>
+</div>
+<center>
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
+</center>

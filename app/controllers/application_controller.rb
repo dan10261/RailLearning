@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
-
+  add_flash_types :success, :warning, :danger, :info
 	helper_method :current_glsuser, :logged_in?
 
 	def current_glsuser

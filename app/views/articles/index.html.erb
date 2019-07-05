@@ -1,29 +1,24 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Articles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<center>
+<%= link_to "create an article", new_article_path%>
+<h1>List of all articles</h1>
+</center>
+<div class="row">
+<div class="col-sm-offset-2 col-sm-8 well">
     <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.description %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div  class= "form-group">      	
+      	<%= link_to "#{article.title}", article_path(article), class: "form-control-static" %>
+        <div>
+        	<%= article.description%>
+        </div>
+      </div>
+      <div class= "form-group">      	
+      	<%= link_to 'Show', article , class: "btn btn-primary btn-xs" %>
+      	<%= link_to 'Edit', edit_article_path(article), class: "btn btn-success btn-xs" %>
+      	<%= link_to 'Destroy', article, method: :delete , class: "btn btn-danger btn-xs", data: { confirm: 'Are you sure?' } %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Article', new_article_path %>
+</div>
+</div>
+<center>
+	<%= link_to 'New Article', new_article_path %>
+</center>
