@@ -1,0 +1,21 @@
+<div class="row">
+    <% obj.each do |article| %>
+      <div class="col-sm-offset-2 col-sm-8 well">
+          <div  class= "form-group">      	
+          	<%= link_to "#{article.title}", article_path(article), class: "form-control-static" %>
+            <div>
+            	<%= simple_format(article.description)%>
+            </div>
+            <% if article.categories.any?%>
+              Categories: <p class="badge">  <%= render article.categories%></p>
+            <% end %>
+          </div>
+          <div class= "form-group">      	
+          	<%= link_to 'Show', article , class: "btn btn-primary btn-xs" %>
+          	<%= link_to 'Edit', edit_article_path(article), class: "btn btn-success btn-xs" %>
+          	<%= link_to 'Destroy', article, method: :delete , class: "btn btn-danger btn-xs",
+              data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+    <% end %>
+</div>

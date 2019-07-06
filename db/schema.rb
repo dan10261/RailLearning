@@ -12,8 +12,19 @@
 
 ActiveRecord::Schema.define(version: 2019_07_05_174319) do
 
-# Could not dump table "addresses" because of following StandardError
-#   Unknown type '' for column 'glsuser_id'
+  create_table "addresses", force: :cascade do |t|
+    t.text "street1"
+    t.text "street2"
+    t.string "zip5"
+    t.string "zip4"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "province"
+    t.string "is_foreign_country"
+    t.integer "glsuser_id"
+    t.index ["glsuser_id"], name: "index_addresses_on_glsuser_id"
+  end
 
   create_table "article_categories_associations", force: :cascade do |t|
     t.integer "article_id"
@@ -44,8 +55,8 @@ ActiveRecord::Schema.define(version: 2019_07_05_174319) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin"
     t.string "password_digest"
+    t.boolean "admin", default: false
   end
 
   create_table "notes", force: :cascade do |t|

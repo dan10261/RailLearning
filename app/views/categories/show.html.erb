@@ -1,19 +1,10 @@
 <center><% render '/layouts/message'%></center>
 
-<p>
-  <strong>Name:</strong>
-  <%= link_to "#{@category.name}", category_path(@category) %>
-</p>
+<%= will_paginate @category_articles %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @category.description %>
-</p>
-
-<p>
-  <strong>Code:</strong>
-  <%= @category.code %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= render 'articles/article' , obj: @category_articles%>
+<%= will_paginate @category_articles %>
+<center>
+	<%= link_to 'Edit', edit_category_path(@category) %> |
+	<%= link_to 'Back', categories_path %>
+</center>

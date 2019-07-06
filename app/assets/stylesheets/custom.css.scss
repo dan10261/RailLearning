@@ -62,6 +62,16 @@ $navbar-default-bg: black;
 .panel li{
 	text-align: left;
 }
+
+.category_name_dsp{
+	list-style: none;
+}
+
+.category_name_dsp .name{
+	font-size:25px;
+	font-weight: bold;
+}
+
 footer{
 	float: none;
 	clear: both;
